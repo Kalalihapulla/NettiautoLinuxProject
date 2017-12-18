@@ -1,0 +1,311 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+
+  <title>Frontpage</title>
+
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+
+			 <div class="col-2">
+  				<img id="fpLogoTag" src="http://www.theonestopcarshop.co.uk/wp-content/uploads/2016/02/car-search.png">
+  			</div>
+
+		
+			 <div class="col-4" id="col-6">
+  				<h1> Search for cars </h1> 
+  			</div>
+
+  			<div class="col-1">
+  			
+  			</div>
+
+  			<div class="col-4" id="col-6">
+  				<button type="button" id="savedCars">Check saved searches</button>
+  			</div>
+
+  			 <div class="col-1">
+  				
+  			</div>
+
+ 		 </div>
+  	
+  	<div class="row">
+  		<div class="col">
+  		</div>
+
+ <div class="col-12" id="searchForm">
+	<form id="sendSearchData" name="sendSearchData" method="POST" action="searchresult.py">
+	
+	<span>Vehicle type <select name="vehicleType">
+		<option label=""></option>
+ 		<option value="1">Henkilöauto</option>
+  		<option value="26">Kevyt kuorma-auto</option>
+  		<option value="3">Minibussi</option>
+  		<option value="18">Pakettiauto</option>
+	</select></span>
+ 	<br>
+ 	<br>
+ 	<div>
+	<span> Car brand:  <input id="carBrand" type="text" name="carBrand"/> or select from list: 
+	<select id="carBrandList" name="carBrandList">
+		<option label=""></option>
+
+	</select><button type="button" id="modelButton">Get models</button></span>
+	</div>
+	<br>
+	<span id="insertModelSearch">
+		<!--Car model: 	<input  type="text" name="carModel"/>
+		or select from list: 
+		<select id="insertModels" name="carModelList">
+		<option label=""></option>
+		</select>
+		-->
+	</span>
+	<br>
+	<br>
+	<span>Vehicle chassis: <select name="chassisType">
+		<option label=""></option>
+ 		<option value="9">Avoauto</option>
+  		<option value="12">Avolava</option>
+  		<option value="1">Coupé</option>
+  		<option value="48">Erillinen kuormatila</option>
+  		<option value="4">Farmari</option>
+  		<option value="18">Kilpa-ajoneuvo</option>
+  		<option value="43">Lyhyt - Korkea</option>
+  		<option value="49">Lyhyt - Matala</option>
+  		<option value="42">Lyhyt - Puolikorkea</option>
+  		<option value="5">Maastoauto</option>
+  		<option value="8">Muu korityyppi</option>
+  		<option value="44">Pitkä - Korkea</option>
+  		<option value="51">Pitkä - Matala</option>
+  		<option value="45">Pitkä - Puolikorkea</option>
+  		<option value="2">Porrasperä</option>
+  		<option value="46">Puolipitkä - Korkea</option>
+  		<option value="50">Puolipitkä - Matala</option>
+  		<option value="47">Puolipitkä - puolikorkea</option>
+  		<option value="7">Tila-auto</option>
+	</select></span>
+	<img id="fpLogoFront" src="http://www.theonestopcarshop.co.uk/wp-content/uploads/2016/02/car-search.png">
+	<br>
+	<br>
+		<span>Fuel Type: <select name="fuelType">
+		<option label=""></option>
+ 		<option value="1">Bensiini</option>
+  		<option value="2">Diesel</option>
+  		<option value="5">Hybridi</option>
+  		<option value="4">Sähkö</option>
+  		<option value="6">Kaasu</option>
+  		<option value="7">E85 / Bensiini</option>
+	</select></span>
+	<br>
+	<br>
+		<span>Gearbox type: <select name="gearType">
+		<option label=""></option>
+ 		<option value="3">Automaatti</option>
+  		<option value="2">Manuaali</option>
+	</select></span>
+
+	<br>
+	<br>
+	<span> price from:  <input type="number" name="priceFrom" min="0"/> - Price to: <input type="number" name="priceTo" min="1"/> </span>
+	<br>
+	<br>
+	<span> Year from:  <input type="number" name="yearFrom" min="1900" max="2018"/> - Year to: <input type="number" name="yearTo" min="1900" max="2018"/> </span>
+	<br>
+	<br>
+	<span> Engine size from:  <input class="decCheck" type="" name="engineFrom" min="0" max="10"/> - Engine size to: <input class="decCheck" type="numberl" name="engineTo" min="0" max="10"/> </span>
+	<br>
+	<br>
+	<span> Mileage from (Km):  <input type="number" name="mileageFrom" min="0" max="2000000"/> - Mileage to (Km) <input type="number" name="mileageTo" min="0" max="2000000"/> </span>
+	<br>
+	<br>
+	<span> Without road permit: <input type="checkbox" name="roadPermit" value="N">
+		Air conditioning: <input type="checkbox" name="airCon" value="7">
+		Cruise control: <input type="checkbox" name="cruiseControl" value="20">
+		Tow bar: <input type="checkbox" name="towBar" value="4">
+		All wheel drive: <input type="checkbox" name="4wd" value="3">
+	</span>
+	<br>
+	<br>
+	<br>
+	<button type="button" id="searchCars">Search cars</button>
+</form>
+</div>
+<div class="col">
+  		</div>
+ </div>
+
+<script>
+
+
+	$(document).ready(function () {
+
+
+		$("#savedCars").click(function () {
+
+			window.location = "saved.py";
+		});
+		//Checks for right input type. Only allows numbers and a "." character
+		 $('.decCheck').keypress(function (event) {
+            return isNumber(event, this)
+        });
+
+		 function isNumber(evt, element) {
+
+        var charCode = (evt.which) ? evt.which : event.keyCode
+
+        if (
+            (charCode != 45 || $(element).val().indexOf('-') != -1) &&      
+            (charCode != 46 || $(element).val().indexOf('.') != -1) &&      
+            (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    }    
+    	//Submits the form
+ 		$("#searchCars").click(function () {
+
+ 			// && ($("input[name=priceFrom]").val() <= $("input[name=priceTo]").val()
+ 		
+ 			//if (($("input[name=yearFrom]").val() <= $("input[name=yearTo]").val()) && ($("input[name=engineFrom]").val() <= $("input[name=engineTo]").val())) {
+ 				 $( "#sendSearchData" ).submit()
+ 			//}
+
+ 			//else {
+ 			//	alert("One of your values is incorrect (smaller > Larger)")
+ 			//}	
+		
+    });
+
+    $("#modelButton").click(function () {
+       
+       //"https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeYear/make/honda/vehicletype/Multipurpose Passenger Vehicle (MPV)?format=json"
+
+      //var carMakeForMode = $("#carBrand").val();
+
+      var carMakeForModel = document.getElementById('carBrand').value;
+      // var carMakeForModelList = document.getElementById('carBrandList').value;
+      var carMakeForModelList = $('#carBrandList :selected').val()
+
+  
+      if ((carMakeForModel == "") && (carMakeForModelList != "")) {
+     	url = "https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMake/" + carMakeForModelList + "?format=json"   
+      }
+      else {
+      	url = "https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMake/" + carMakeForModel + "?format=json" 
+      }
+      
+      $("#insertModelSearch").empty();
+      $("#insertModelSearch").append('Car model: ');
+      $("#insertModelSearch").append('<input id="carModel" type="text" name="carModel"/>');
+      $("#insertModelSearch").append(' or select from list: ');
+      $("#insertModelSearch").append('<select id="insertModels" name="carModelList">');
+      $("#insertModelSearch").append('<option label=""></option>');
+      $("#insertModelSearch").append('</select>');
+      $("#insertModelSearch").append('<button type="button" id="emptySelection">empty</button>');
+
+  	//Searches an external api for all car models based on the brand.
+     $.ajax({
+
+	url: url,
+	type: "GET",
+	dataType: "json",
+	success: function(result)
+	{		
+		
+		$("#insertModels").empty();
+
+		
+		$("#insertModels").append('<option label=""></option>');
+		for (i in result.Results) {
+
+			modelData = result.Results[i].Model_Name;
+
+			$("#insertModels").append('<option value="' + modelData + '">' + modelData + '</option>');
+
+		}
+
+		if (result.Results.length == 0) {
+			alert("No models found, try again")
+			$("#carBrand").val(carMakeForModelList);
+			//$("#insertModelSearch").empty();
+
+		}
+	
+	},
+	error: function(xhr, ajaxOptions, thrownError)
+	{
+		$("#insertModelSearch").empty();
+		alert("Please enter car brand")
+		console.log(xhr.status);
+		console.log(thrownError);
+	}
+
+		});
+   
+
+    }); 
+
+
+     var brandArray = [
+      "A:", "Acura", "Alfa Romeo", "AMC", "Ariel", "Aston Martin", "Audi", "Austin", "B:", "Bentley", "BMW", "Borgward", "Buick", "C:", " Cadillac", "Caterham", "Chatenet", "Checker", "Chevrolet", "Chrysler", "Citroen", "Cobra", "D:", "Dacia", "Daewoo", "Daihatsu", "Daimler", "Datsun", "DeSoto", "DFSK", "Dodge", "DS", "F:", "Ferrari", "Fiat", "Fiat-Abarth", "Ford", "Fuso", "G", "GAZ", "GMC", "H:", "Hartge", "Hillman", "Honda", "Hudson", "Hummer", "Hyundai", "I:", "Infiniti", "International", "Isuzu", "Iveco", "J:", "Jaguar", "Jeep", "Jensen", "K:", "KIA", "L:", "Lada", "Lamborghini", "Lancia", "Land Rover", "Lexus", "Leyland", "Lincoln", "Lotus", "M:", "Maserati", "Maybach", "Mazda", "McLaren", "Mercedes-Benz", "Mercury", "MG", "Mini", "Mitsubishi", "Mitsubishi Fuso", "Mitsuoka", "Morris", "Moskvitsh", "Muu merkki", "N:", "Nash", "Nissan", "NSU", "O:", "Oldsmobile", "Opel", "P:", "Packard", "Peugeot", "Pinzgauer", "Plymouth", "Pontiac", "Porsche", "R:", "Rambler", "Renault", "Riley", "Rolls-Royce", "Rover", "S:", "Saab", "Seat", "Simca", "Skoda", "Smart", "SsangYong", "Studebaker", "Subaru", "Sunbeam", "Suzuki", "T:", "Talbot", "Tazzari", "Tempo", "Tesla", "Toyota", "Trabant", "Triumph", "TruckMasters", "U:", "UAZ", "V:", "Vauxhall", "Volga", "Volkswagen", "Volvo", "W:", "Wartburg", "Willys", "Z:", "ZAZ"];
+
+$( function() {
+
+	//Checks for correct input
+	for (u in brandArray) {
+
+		if((brandArray[u] == "A:") || (brandArray[u] == "B:") || (brandArray[u] == "C:") || (brandArray[u] == "D:") || (brandArray[u] == "F:") || (brandArray[u] == "G:") || (brandArray[u]== "H:") || (brandArray[u] == "I:") || (brandArray[u] == "J:") || (brandArray[u] == "K:") || (brandArray[u] == "L:") || (brandArray[u] == "M:") || (brandArray[u] == "N:") || (brandArray[u] == "O:") || (brandArray[u] == "P:") || (brandArray[u] == "R:") || (brandArray[u] == "S:") || (brandArray[u] == "T:") || (brandArray[u] == "U:") || (brandArray[u] == "V:") || (brandArray[u] == "W:") || (brandArray[u] == "Z:")) {
+			$("#carBrandList").append('<option disabled id="carBrandOption" value="' + brandArray[u] + '">' + brandArray[u] + '</option>');
+		}
+		else {
+				$("#carBrandList").append('<option id="carBrandOption" value="' + brandArray[u] + '">' + brandArray[u] + '</option>');
+			}
+		}
+	
+   //Jquery autocomplete for he brand list
+    $( "#carBrand" ).autocomplete({ 
+     source: brandArray,
+    messages: {
+        noResults: '',
+        results: function() {}
+    }
+	});
+
+	$('select[name="carBrandList"]').change(function() {
+    	$('#carBrand').val('');
+	});
+
+	$("#insertModelSearch").on('change', 'select[name="carModelList"]' ,function(){  	
+		    		$('#carModel').val('');
+    }); 
+
+	 $("#insertModelSearch").on('click', '#emptySelection' ,function(){  	
+    		$("#insertModelSearch").empty();
+    }); 
+
+});
+
+
+});
+
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>

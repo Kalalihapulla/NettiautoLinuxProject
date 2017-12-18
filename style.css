@@ -1,0 +1,221 @@
+
+
+body {
+	  background: url('https://www.rolandberger.com/img/Background-Folder/Backgrounds/02_tea_download_image_caption_w768.jpg') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+ 	
+}
+
+.header {
+  margin: 0;
+}
+
+.container1 {
+	 display: flex;
+	 flex-direction: row;
+}
+
+.container2{
+	 display: flex;
+	 flex-direction: column;
+	 flex-wrap;
+	 width: 100%;
+}
+
+.col1 {
+	margin-top: 2em;
+	 flex-grow: 1;
+	 width: 30%;
+	 display: inline-block;
+}
+
+
+.carCont {
+	margin: 2em 2em 0em 2em;
+	padding: 1em 1em 1em 3em;
+	border: 3px solid grey;
+    border-radius: 6px;
+    background-color:rgba(255, 255, 255, 0.95);
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+h2 {
+	text-align: center;
+	color: rgb(83, 128, 21);
+	text-decoration: underline;
+}
+
+.carImage {
+	border: 2px solid black;
+    border-radius: 6px;
+ 
+
+}
+
+#fpLogo {
+	width: 5em;
+	height: 5em;
+	padding-left: 1em;
+	padding-top: 1em;
+}
+
+#col3 {
+	margin-right:5em !important;
+}
+
+.ui-autocomplete {
+    background-color: white;
+    width: 10em;
+    border: 2px solid black;
+}
+
+#searchForm {
+	padding: 3em;
+	padding-left: 10em;
+	border: 3px solid grey;
+    border-radius: 6px;
+    background-color:rgba(255, 255, 255, 0.95);
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 3em;
+    font-size: 16px;
+
+
+}
+
+.ui-helper-hidden-accessible {
+ 	display:none; 
+ }
+
+ #fpLogoFront {
+	width: 15em;
+	height: 15em;
+	float: right;
+
+	
+}
+
+#searchCars {
+	width: 10em;
+	height: 2em;
+	margin-right: : 10em;
+	border: 2px solid grey;
+	background-color: rgb(159, 224, 71);
+	color: black;
+	font-weight: bold;
+	border-radius: 5px;
+	font-size: 20px;
+}
+
+#modelButton {
+	border: 2px solid grey;
+	margin-left: 2em;
+	border-radius: 5px;
+	background-color: rgb(159, 224, 71);
+	color: black;
+	font-weight: bold;
+}
+
+#col-6 {
+
+	border: 3px solid grey;
+	font-weight: bold;
+	border-radius: 5px;
+	background-color:rgba(255, 255, 255, 0.95);
+	margin-top: 2em;
+	padding-top: 1em;
+	text-align: center;
+
+}
+
+#fpLogoTag {
+	height: 6em;
+	width: 6em;
+	margin-top: 2em;
+	margin-left: 1em;
+}
+
+#emptySelection {
+	border: 2px solid grey;
+	margin-left: 2em;
+	border-radius: 5px;
+	background-color: rgb(159, 224, 71);
+	color: black;
+	font-weight: bold;
+}
+
+#savedCars {
+	width: 15em;
+	height: 2.5em;
+	margin-right: : 10em;
+	border: 2px solid grey;
+	background-color: rgb(159, 224, 71);
+	color: black;
+	font-weight: bold;
+	border-radius: 5px;
+	font-size: 20px;
+}
+
+
+input {
+	border: 1.5px solid grey;
+	
+	border-radius:	3px;
+}
+
+select {
+	border: 1.5px solid grey;
+	
+	border-radius: 3px;
+}
+
+#resultsText {
+	width: 75%;
+	float: right;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border: 3px solid grey;
+	font-weight: bold;
+	border-radius: 5px;
+	background-color:rgba(255, 255, 255, 0.95);
+	margin-right: 10em;
+
+}
+
+#resultTextDiv {
+	margin-bottom: 1em;
+}
+
+#fpLogoSearch {
+	width: 5em;
+	height: 5em;
+	margin-left: 3em;
+	padding-top: 1em;
+}
+
+a {
+	color: rgb(83, 128, 21);
+}
+
+#savebutton {
+	height: 3em;
+	width: 16em;
+	border: 2px solid grey;
+	background-color: rgb(159, 224, 71);
+	color: black;
+	font-weight: bold;
+	border-radius: 5px;
+	font-size: 20px;
+	margin-left: 2em;
+
+}
