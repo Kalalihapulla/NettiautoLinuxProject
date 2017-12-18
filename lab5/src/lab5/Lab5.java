@@ -73,7 +73,7 @@ public class Lab5 {
         } catch (Exception e) {
         }
         
-        String FILENAME = "C:/Users/Jebu/Desktop/lab5/output.txt";
+        String FILENAME = "output.txt";
         
        	BufferedWriter bw = null;
 	FileWriter fw = null;

@@ -22,10 +22,11 @@ public class Graph {
 
     private ArrayList<LinkedList<Integer>> graph = new ArrayList<LinkedList<Integer>>();
     private int nodes;
-    public boolean reach = false;
+     boolean reach = false;
 
     public void readGraph(File file) {
         
+        System.out.println(reach);
         try {
             Scanner sc = new Scanner(file);
             int count = 0;
